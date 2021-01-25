@@ -1,0 +1,152 @@
+$primary-blue: hsl(223, 87%, 63%);
+$pale-blue: hsl(223, 100%, 88%);
+$light-red: hsl(354, 100%, 66%);
+$neutral-gray: hsl(0, 0%, 59%);
+$neutral-dk-blue: hsl(209, 33%, 12%);
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // max-width: 500px;
+  height: 100vh;
+  // margin: auto;
+}  
+
+.logo-container {
+  // width: 15%;
+  // height: auto;
+  // align-self: center;
+  margin-bottom: 2.5rem;
+}
+
+.hero {
+
+  &__header {
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  &__p {
+    margin-bottom: 2rem;
+    
+  }
+
+}
+
+.email {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-self: center;
+  margin-bottom: 3rem;
+
+  &__input {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 20px;
+    border: 1px solid $neutral-gray;
+    opacity: 60%;
+
+    &::placeholder {
+      font-family: 'Libre Franklin', sans-serif;
+      padding-left: 5%;
+    }
+  }
+
+  &__button {
+    padding: 0.75rem;
+    background-color: $primary-blue;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 4px 4px 9px -3px rgb(58, 56, 56);
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+      opacity: 60%;
+    }
+  }
+
+}
+
+.graph-img {
+  height: 12rem;
+  width: auto;
+  object-fit: scale-down;
+  margin-bottom: 4rem;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+
+ &__icon {
+   padding: 1rem;
+   color: $primary-blue;
+   cursor: pointer;
+   border-radius: 50%;
+   transition: all 0.7s ease;
+
+   &:hover {
+     color: #fff;
+     background-color: $primary-blue;
+     transform: scale(1.2);
+   }
+ }
+
+ &__text {
+   font-size: 0.7rem;
+   margin-top: 0.5rem;
+ }
+}
+
+@media (min-width: 800px) {
+  body {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .hero {
+    &__header {
+      font-size: 2.5rem;
+    }
+  }
+
+  .graph-img {
+    height: 20rem;
+    width: auto;
+  }
+
+  .email {
+    flex-direction: row;
+  
+    &__input {
+      flex: 2;
+      margin-right: 0.5rem;
+      margin-bottom: 0;
+    }
+
+    &__button {
+      flex: 1
+      ;
+    }
+  }
+}
