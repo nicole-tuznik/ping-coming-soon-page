@@ -14,20 +14,20 @@ $neutral-dk-blue: hsl(209, 33%, 12%);
 body {
   text-align: center;
   font-family: 'Libre Franklin', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  // max-width: 500px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  max-width: 500px;
   height: 100vh;
-  // margin: auto;
+  margin: auto;
 }  
 
 .logo-container {
   // width: 15%;
   // height: auto;
   // align-self: center;
-  margin-bottom: 2.5rem;
+  margin: 2rem 0;
 }
 
 .hero {
@@ -51,25 +51,36 @@ body {
 .email {
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 70%;
-  align-self: center;
+  max-width: 400px;
+  margin: 0 auto;
   margin-bottom: 3rem;
 
   &__input {
     padding: 0.75rem;
-    margin-bottom: 0.5rem;
+    // margin-bottom: 0.5rem;
     border-radius: 20px;
     border: 1px solid $neutral-gray;
     opacity: 60%;
+    padding-left: 5%;
+
+    &:focus {
+      outline: none;
+    }
 
     &::placeholder {
-      font-family: 'Libre Franklin', sans-serif;
-      padding-left: 5%;
+      font-family: 'Libre Franklin', sans-serif; 
     }
+  }
+
+  &__invalid-text {
+    display: none;
   }
 
   &__button {
     padding: 0.75rem;
+    margin-top: 1rem;
     background-color: $primary-blue;
     border-radius: 20px;
     border: none;
@@ -82,21 +93,42 @@ body {
     &:hover {
       opacity: 60%;
     }
+
+    &:focus {
+      outline: none;
+    }
   }
 
 }
 
-.graph-img {
-  height: 12rem;
-  width: auto;
-  object-fit: scale-down;
-  margin-bottom: 4rem;
+// Invalid styling
+
+.email.invalid
+.email__input {
+  border: 1px solid $light-red;
 }
 
-.footer {
-  position: absolute;
-  width: 100%;
-  bottom: 5%;
+.email.invalid
+.email__invalid-text {
+  display: block;
+  color: $light-red;
+  font-size: 0.7rem;
+  font-style: italic;
+  margin-top: 0.3rem;
+}
+
+// end of invalid styling
+
+.graph-img-container {
+  height: 32%;
+}
+
+.graph-img {
+  height: 100%
+}
+
+.socials {
+
 
  &__icon {
    padding: 1rem;
@@ -112,13 +144,14 @@ body {
    }
  }
 
- &__text {
-   font-size: 0.7rem;
-   margin-top: 0.5rem;
- }
 }
 
-@media (min-width: 800px) {
+.copyright__text {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 600px) {
   body {
     max-width: 800px;
     margin: auto;
@@ -130,10 +163,10 @@ body {
     }
   }
 
-  .graph-img {
-    height: 20rem;
-    width: auto;
-  }
+  // .graph-img {
+  //   height: 20rem;
+  //   width: auto;
+  // }
 
   .email {
     flex-direction: row;
@@ -141,12 +174,20 @@ body {
     &__input {
       flex: 2;
       margin-right: 0.5rem;
-      margin-bottom: 0;
+      
     }
 
     &__button {
-      flex: 1
-      ;
+      flex: 1;
+      margin-top: 0;
     }
+  }
+
+  .email.invalid
+  .email__invalid-text {
+    position: absolute;
+    top: 108%;
+    left: 5%;
+
   }
 }
