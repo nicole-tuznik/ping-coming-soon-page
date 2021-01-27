@@ -14,20 +14,16 @@ $neutral-dk-blue: hsl(209, 33%, 12%);
 body {
   text-align: center;
   font-family: 'Libre Franklin', sans-serif;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   max-width: 500px;
   height: 100vh;
-  margin: auto;
 }  
 
 .logo-container {
-  // width: 15%;
-  // height: auto;
-  // align-self: center;
-  margin: 2rem 0;
+  margin-top: 2rem;
 }
 
 .hero {
@@ -41,11 +37,6 @@ body {
     font-weight: 700;
   }
 
-  &__p {
-    margin-bottom: 2rem;
-    
-  }
-
 }
 
 .email {
@@ -53,13 +44,12 @@ body {
   flex-direction: column;
   position: relative;
   width: 70%;
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
-  margin-bottom: 3rem;
 
   &__input {
     padding: 0.75rem;
-    // margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
     border-radius: 20px;
     border: 1px solid $neutral-gray;
     opacity: 60%;
@@ -120,7 +110,8 @@ body {
 // end of invalid styling
 
 .graph-img-container {
-  height: 32%;
+  height: 28%;
+  padding: 0.25rem;
 }
 
 .graph-img {
@@ -128,7 +119,6 @@ body {
 }
 
 .socials {
-
 
  &__icon {
    padding: 1rem;
@@ -143,14 +133,13 @@ body {
      transform: scale(1.2);
    }
  }
-
 }
 
 .copyright__text {
   font-size: 0.7rem;
-  margin-top: 0.5rem;
 }
 
+// Styles for larger screens
 @media (min-width: 600px) {
   body {
     max-width: 800px;
@@ -163,10 +152,9 @@ body {
     }
   }
 
-  // .graph-img {
-  //   height: 20rem;
-  //   width: auto;
-  // }
+  .graph-img-container {
+    height: 40%;
+  }
 
   .email {
     flex-direction: row;
@@ -174,7 +162,6 @@ body {
     &__input {
       flex: 2;
       margin-right: 0.5rem;
-      
     }
 
     &__button {
@@ -188,6 +175,5 @@ body {
     position: absolute;
     top: 108%;
     left: 5%;
-
   }
 }
