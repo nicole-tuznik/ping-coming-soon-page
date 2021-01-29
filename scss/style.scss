@@ -16,14 +16,14 @@ body {
   font-family: 'Libre Franklin', sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   max-width: 500px;
   height: 100vh;
 }  
 
 .logo-container {
-  margin-top: 2rem;
+  margin-top: auto;
 }
 
 .hero {
@@ -45,7 +45,7 @@ body {
   position: relative;
   width: 70%;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 2rem auto;
 
   &__input {
     padding: 0.75rem;
@@ -112,6 +112,7 @@ body {
 .graph-img-container {
   height: 28%;
   padding: 0.25rem;
+  margin-top: 2rem;
 }
 
 .graph-img {
@@ -119,6 +120,8 @@ body {
 }
 
 .socials {
+  margin-top: auto;
+  
 
  &__icon {
    padding: 1rem;
@@ -137,6 +140,7 @@ body {
 
 .copyright__text {
   font-size: 0.7rem;
+  margin-bottom: 2rem;
 }
 
 // Styles for larger screens
